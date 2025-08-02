@@ -8,7 +8,8 @@ urlpatterns = [
     path("", views.index, name="index"),
     # entry recebida é envaida para a função entry_page em views
     path("wiki/<str:title>", views.entry_page, name="entry"),
-    path("search", views.search, name="search")
+    path("search", views.search, name="search"),
+    path("create", views.create_page, name="create_page")
 ]
 
 # wiki/<str:title> cria um padrão de URL.

@@ -53,3 +53,23 @@ def search(request):
         "results": results,
         "query": query
     })
+
+def create_page(request):
+    # Se o formulário foi enviado (POST)
+    if request.method == "POST":
+        title = request.POST.get("title")
+        content = request.POST.get("content")
+
+        # Verifica se a entrada com este título já existe
+        if util.get_entry(title) is not None:
+            # Se existir, renderiza a página de erro
+            return render(request, "encyclopedia/create_page.html", {
+                "error": "An entry with this title already exists. Please choose a different title."
+            })
+        
+        # Se não existir, salva a nova entrada e redireciona
+        util.save_entry(title, content)
+        return HttpResponseRedirect(reverse("entry", args=[title]))
+    
+    # Esse é o comando que mostra a página de criação, se a requisição for GET  
+    return render(request, "encyclopedia/create_page.html")
