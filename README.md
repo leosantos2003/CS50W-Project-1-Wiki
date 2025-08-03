@@ -13,6 +13,14 @@ The main page contains a list of all available pages, as well as a searchbar and
 
 ## Screenshots
 
+<img width="1895" height="845" alt="Captura de tela 2025-08-03 003933" src="https://github.com/user-attachments/assets/d8b12c64-c082-4c92-96da-7ad893ddf9e9" />
+
+<img width="1894" height="844" alt="Captura de tela 2025-08-03 004041" src="https://github.com/user-attachments/assets/486743b1-6b9b-4944-8bca-9afe950a05d5" />
+
+<img width="1894" height="843" alt="Captura de tela 2025-08-03 004224" src="https://github.com/user-attachments/assets/f14a7e45-3b66-46b5-ae4e-4d995bcc4e29" />
+
+<img width="1894" height="843" alt="Captura de tela 2025-08-03 004305" src="https://github.com/user-attachments/assets/03b6a9f9-5069-4e7f-ad47-c98c48abc06e" />
+
 ## Video Demo
 
 ## License
