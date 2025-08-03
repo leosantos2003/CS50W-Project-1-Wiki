@@ -23,6 +23,8 @@ The main page contains a list of all available pages, as well as a searchbar and
 
 ## Video Demo
 
+https://github.com/user-attachments/assets/47f8fa14-82b9-4877-847b-d43444039e92
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
