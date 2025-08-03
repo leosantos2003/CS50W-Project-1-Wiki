@@ -73,3 +73,29 @@ def create_page(request):
     
     # Esse é o comando que mostra a página de criação, se a requisição for GET  
     return render(request, "encyclopedia/create_page.html")
+
+# Função que exibe o formulário e salva as alterações
+def edit_page(request, title):
+    # Pega o conteúdo original da entrada
+    original_content = util.ger_entry(title)
+
+    # Se a requisição for POST (formulário enviado)
+    if request.method == "POST":
+        # Pega o novo conteúdo do formulário
+        new_content = request.POST.get ("content")
+
+        # Salva o conteúdo atualizado
+        util.save_entry(title, new_content)
+
+        # Redireciona de volra para a página de entrada
+        return HttpResponseRedirect(reverse("entry, args=[title]"))
+    
+    # Se a requisição for GET, e não POST (ou seja, apenas visitando a página de edição)
+    else:
+        # Renderiza a página de edição, passando o título e o contéudo original
+        return render(request, "encyclopedia/edit_page.html", {
+            "title": title,
+            "content": original_content
+        })
+    
+    
