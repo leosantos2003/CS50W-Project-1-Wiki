@@ -77,9 +77,7 @@ def create_page(request):
 
 # Função que exibe o formulário e salva as alterações
 def edit_page(request, title):
-    # Pega o conteúdo original da entrada
-    original_content = util.get_entry(title)
-
+   
     # Se a requisição for POST (formulário enviado)
     if request.method == "POST":
         # Pega o novo conteúdo do formulário
@@ -93,6 +91,9 @@ def edit_page(request, title):
     
     # Se a requisição for GET, e não POST (ou seja, apenas visitando a página de edição)
     else:
+        # Pega o conteúdo original para preencher o formulário
+        original_content = util.get_entry(title)
+        
         # Renderiza a página de edição, passando o título e o contéudo original
         return render(request, "encyclopedia/edit_page.html", {
             "title": title,
