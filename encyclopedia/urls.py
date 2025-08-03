@@ -10,7 +10,8 @@ urlpatterns = [
     path("wiki/<str:title>", views.entry_page, name="entry"),
     path("search", views.search, name="search"),
     path("create", views.create_page, name="create_page"),
-    path("edit/<str:title>", views.edit_page, name="edit_page")
+    path("edit/<str:title>", views.edit_page, name="edit_page"),
+    path("random", views.random_page, name="random_page")
 ]
 
 # wiki/<str:title> cria um padrão de URL.

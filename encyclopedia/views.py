@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 import markdown2
+import random
 
 from . import util
 
@@ -77,7 +78,7 @@ def create_page(request):
 # Função que exibe o formulário e salva as alterações
 def edit_page(request, title):
     # Pega o conteúdo original da entrada
-    original_content = util.ger_entry(title)
+    original_content = util.get_entry(title)
 
     # Se a requisição for POST (formulário enviado)
     if request.method == "POST":
@@ -98,4 +99,12 @@ def edit_page(request, title):
             "content": original_content
         })
     
-    
+def random_page(request):
+    # Redireciona o usuário para uma página aleatória de entrada
+    all_entries = util.list_entries()
+
+    # Escolhe um título aleatoriamente da lista
+    random_title = random.choice(all_entries)
+
+    # Redireciona para a página escolhida
+    return HttpResponseRedirect(reverse("entry", args=[random_title]))
